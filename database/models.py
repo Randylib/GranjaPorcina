@@ -1,7 +1,7 @@
 from database.database import get_connection
 from datetime import datetime
 
-# ─── PUERCAS ───────────────────────────────────────────
+#PUERCAS 
 
 def agregar_puerca(nombre, id_unico, fecha_ingreso):
     conn = get_connection()
@@ -21,7 +21,7 @@ def obtener_puercas():
     conn.close()
     return puercas
 
-# ─── PARTOS ────────────────────────────────────────────
+#  PARTOS 
 
 def registrar_parto(puerca_id, fecha_parto, cantidad_lechones):
     conn = get_connection()
@@ -56,7 +56,7 @@ def promedio_lechones_por_puerca(puerca_id):
     conn.close()
     return resultado
 
-# ─── LECHONES ──────────────────────────────────────────
+# LECHONES 
 
 def agregar_lechon(puerca_id, parto_id, fecha_nacimiento, peso_kg=0):
     conn = get_connection()
@@ -79,7 +79,7 @@ def vender_lechon(lechon_id, precio_venta, fecha_venta):
     conn.commit()
     conn.close()
 
-# ─── ENGORDE ───────────────────────────────────────────
+# ENGORDE 
 
 def agregar_cerdo_engorde(id_cerdo, peso_individual, peso_lote, precio_mercado, fecha):
     conn = get_connection()
@@ -99,7 +99,7 @@ def obtener_cerdos_engorde():
     conn.close()
     return cerdos
 
-# ─── GASTOS E INGRESOS ─────────────────────────────────
+# GASTOS E INGRESOS 
 
 def agregar_gasto(seccion, categoria, monto, fecha):
     conn = get_connection()

@@ -5,7 +5,7 @@ from database.models import (
     promedio_lechones_por_puerca
 )
 
-# ─── ENGORDE ───────────────────────────────────────────
+# ENGORDE 
 
 def calcular_ganancia_estimada(peso_lote_kg, precio_mercado_kg):
     """Calcula la ganancia potencial antes de descontar gastos"""
@@ -25,7 +25,7 @@ def calcular_valor_inventario(cerdos):
         total += cerdo["peso_lote_kg"] * cerdo["precio_mercado_kg"]
     return total
 
-# ─── PUERCAS Y LECHONES ────────────────────────────────
+# PUERCAS Y LECHONES 
 
 def calcular_rentabilidad_puercas_lechones():
     """
@@ -60,7 +60,7 @@ def calcular_estimado_lechones(puerca_id, precio_por_lechon):
     promedio = resultado["promedio"]
     return promedio * precio_por_lechon
 
-# ─── RESUMEN GENERAL ───────────────────────────────────
+# RESUMEN GENERAL 
 
 def calcular_resumen_general():
     """Resumen financiero de toda la granja"""
@@ -80,7 +80,7 @@ def calcular_resumen_general():
         "rentable": balance >= 0
     }
 
-# ─── UTILIDADES ────────────────────────────────────────
+# UTILIDADES 
 
 def formatear_monto(monto):
     """Formatea un número como moneda en RD$"""
