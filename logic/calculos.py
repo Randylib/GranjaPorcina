@@ -91,3 +91,34 @@ def calcular_porcentaje_cambio(valor_actual, valor_anterior):
     if valor_anterior == 0:
         return 0
     return round(((valor_actual - valor_anterior) / valor_anterior) * 100, 2)
+from datetime import datetime
+
+def validar_peso(peso):
+    try:
+        peso = float(peso)
+        if peso <= 0:
+            return False, "El peso debe ser mayor a 0"
+        return True, peso
+    except (ValueError, TypeError):
+        return False, "El peso debe ser un número válido"
+
+def validar_monto(monto):
+    try:
+        monto = float(monto)
+        if monto <= 0:
+            return False, "El monto debe ser mayor a 0"
+        return True, monto
+    except (ValueError, TypeError):
+        return False, "El monto debe ser un número válido"
+
+def validar_fecha(fecha):
+    try:
+        datetime.strptime(fecha, "%Y-%m-%d")
+        return True, fecha
+    except ValueError:
+        return False, "La fecha debe tener el formato YYYY-MM-DD"
+
+def validar_texto(texto, campo="Campo"):
+    if not texto or texto.strip() == "":
+        return False, f"{campo} no puede estar vacío"
+    return True, texto.strip()
