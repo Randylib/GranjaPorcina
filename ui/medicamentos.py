@@ -15,7 +15,7 @@ from logic.calculos import (
     validar_monto,
     validar_peso,
     calcular_fechas_aplicacion,
-    calcular_dosis_total  # 🔥 reutilizamos lógica
+    calcular_dosis_total  
 )
 from datetime import datetime, date
 import calendar
@@ -37,7 +37,7 @@ class Medicamentos(ctk.CTkFrame):
         self._crear_tarjetas()
         self._crear_contenido()
 
-    # ───────────────── HEADER ─────────────────
+    
 
     def _crear_header(self):
         header = ctk.CTkFrame(self, fg_color="transparent")
@@ -55,7 +55,7 @@ class Medicamentos(ctk.CTkFrame):
             text_color="gray50"
         ).grid(row=1, column=0, sticky="w")
 
-    # ───────────────── TARJETAS ─────────────────
+    
 
     def _crear_tarjetas(self):
         self.frame_tarjetas = ctk.CTkFrame(self, fg_color="transparent")
@@ -89,7 +89,7 @@ class Medicamentos(ctk.CTkFrame):
                          text_color=color
                          ).grid(row=1, column=0, padx=15, pady=(0, 15), sticky="w")
 
-    # ───────────────── CONTENIDO ─────────────────
+    
 
     def _crear_contenido(self):
         frame = ctk.CTkFrame(self, fg_color="transparent")
@@ -101,7 +101,7 @@ class Medicamentos(ctk.CTkFrame):
         self._crear_tabla(frame)
         self._crear_formulario(frame)
 
-    # ───────────────── TABLA ─────────────────
+    
 
     def _crear_tabla(self, parent):
         frame = ctk.CTkFrame(parent)
@@ -149,7 +149,7 @@ class Medicamentos(ctk.CTkFrame):
         marcar_medicamento_aplicado(med_id)
         self._refresh()
 
-    # ───────────────── FORMULARIO ─────────────────
+    
 
     def _crear_formulario(self, parent):
         frame = ctk.CTkScrollableFrame(parent)
@@ -188,7 +188,7 @@ class Medicamentos(ctk.CTkFrame):
             fg_color="#1D9E75"
         ).pack(padx=15, pady=20, fill="x")
 
-    # ───────────────── GUARDAR ─────────────────
+    
 
     def _guardar(self):
 
@@ -239,7 +239,7 @@ class Medicamentos(ctk.CTkFrame):
         messagebox.showinfo("Éxito", "Medicamento registrado")
         self._refresh()
 
-    # ───────────────── REFRESH ─────────────────
+    #REFRESH 
 
     def _refresh(self):
         self._cargar_tarjetas()

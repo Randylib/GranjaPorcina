@@ -14,7 +14,7 @@ def inicializar_db():
     cursor = conn.cursor()
 
     cursor.executescript("""
-    -- ─── PRODUCCIÓN ──────────────────────────────────────────
+    
     CREATE TABLE IF NOT EXISTS puercas (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nombre TEXT NOT NULL,
@@ -69,7 +69,7 @@ def inicializar_db():
         FOREIGN KEY (lechon_id) REFERENCES lechones(id)
     );
 
-    -- ─── FINANZAS ─────────────────────────────────────────────
+    
     CREATE TABLE IF NOT EXISTS gastos (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         seccion TEXT,
@@ -88,7 +88,7 @@ def inicializar_db():
         notas TEXT
     );
 
-    -- ─── ALIMENTOS ────────────────────────────────────────────
+    
     CREATE TABLE IF NOT EXISTS alimentos (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nombre TEXT,
@@ -108,7 +108,7 @@ def inicializar_db():
         FOREIGN KEY (alimento_id) REFERENCES alimentos(id)
     );
 
-    -- ─── MEDICAMENTOS ─────────────────────────────────────────
+    
     CREATE TABLE IF NOT EXISTS medicamentos (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         seccion TEXT,
@@ -128,7 +128,7 @@ def inicializar_db():
         aplicado INTEGER DEFAULT 0
     );
 
-    -- ─── EMPLEADOS ────────────────────────────────────────────
+    
     CREATE TABLE IF NOT EXISTS empleados (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nombre TEXT NOT NULL,
@@ -147,7 +147,7 @@ def inicializar_db():
         FOREIGN KEY (empleado_id) REFERENCES empleados(id)
     );
 
-    -- ─── ACTIVIDADES ──────────────────────────────────────────
+    
     CREATE TABLE IF NOT EXISTS actividades (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         titulo TEXT,
@@ -157,7 +157,7 @@ def inicializar_db():
         responsable TEXT
     );
 
-    -- ─── VENTAS ───────────────────────────────────────────────
+    
     CREATE TABLE IF NOT EXISTS ventas (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         tipo_animal TEXT,
@@ -174,7 +174,7 @@ def inicializar_db():
 
     conn.commit()
     conn.close()
-    print("✅ Base de datos inicializada correctamente")
+    print("Base de datos inicializada correctamente")
 
 if __name__ == "__main__":
     inicializar_db()
